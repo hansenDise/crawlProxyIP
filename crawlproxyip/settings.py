@@ -25,6 +25,7 @@ NEWSPIDER_MODULE = 'crawlproxyip.spiders'
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
 #DOWNLOAD_DELAY=3
+DOWNLOAD_DELAY=25
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN=16
 #CONCURRENT_REQUESTS_PER_IP=16
@@ -64,6 +65,9 @@ NEWSPIDER_MODULE = 'crawlproxyip.spiders'
 #ITEM_PIPELINES = {
 #    'crawlproxyip.pipelines.SomePipeline': 300,
 #}
+ITEM_PIPELINES = {
+    'crawlproxyip.pipelines.CrawlproxyipPipeline':300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

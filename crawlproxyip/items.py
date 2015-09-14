@@ -9,6 +9,6 @@ import scrapy
 
 
 class CrawlproxyipItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    ip = scrapy.Field()
+    port = scrapy.Field()
+    ptype = scrapy.Field()
