@@ -7,9 +7,11 @@
 
 import MySQLdb
 import socket
+from twisted.enterprise import adbapi
 
 class CrawlproxyipPipeline(object):
-    def process_item(self, item, spider):
+
+    def process_item_(self, item, spider):
     
         try:
             conn = MySQLdb.connect(host='localhost',user='root',passwd='hansen',db='popu')
