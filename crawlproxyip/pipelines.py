@@ -7,11 +7,10 @@
 
 import MySQLdb
 import socket
-from twisted.enterprise import adbapi
 
 class CrawlproxyipPipeline(object):
 
-    def process_item_(self, item, spider):
+    def process_item(self, item, spider):
     
         try:
             conn = MySQLdb.connect(host='localhost',user='root',passwd='hansen',db='popu')
@@ -35,7 +34,8 @@ class CrawlproxyipPipeline(object):
             ret = cursor.execute(str_sql)
            
             if ret == 0:
-                str_sql = 'insert into proxyip(ip,port,protocoltype) values("%s",%d,"%s")'%(ip,port,ptype)
+                str_sql = 'insert into proxyip(ip,port,ptype,weight,bvalid) values("%s",%d,"%s",%d,%d)'%(ip,port,ptype,8000,1)
+
                 cursor.execute(str_sql)
                 conn.commit()
             return item
