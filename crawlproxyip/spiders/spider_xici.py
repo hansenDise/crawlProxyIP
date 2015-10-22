@@ -26,12 +26,12 @@ class SpiderXiciSpider(scrapy.Spider):
 			
 			
 			if iplist.__len__() == 10:
-				if iplist[5] == "HTTP":
-					continue
-				else:
-					item = CrawlproxyipItem()
-					item['ip'] = iplist[0]
-					item['port'] = iplist[1]
-					item['ptype'] = iplist[5]
-					yield item
+				#if iplist[5] == "HTTP":
+				#	continue
+				#else:
+				item = CrawlproxyipItem()
+				item['ip'] = iplist[0]
+				item['port'] = iplist[1]
+				item['ptype'] = iplist[4]
+				yield item
 				
